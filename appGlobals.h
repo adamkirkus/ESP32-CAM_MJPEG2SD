@@ -16,7 +16,7 @@
 
 // User's ESP32 cam board
 #if defined(CONFIG_IDF_TARGET_ESP32)
-#define CAMERA_MODEL_AI_THINKER 
+//#define CAMERA_MODEL_AI_THINKER 
 //#define CAMERA_MODEL_WROVER_KIT 
 //#define CAMERA_MODEL_ESP_EYE 
 //#define CAMERA_MODEL_M5STACK_PSRAM 
@@ -31,8 +31,8 @@
 
 // User's ESP32S3 cam board
 #elif defined(CONFIG_IDF_TARGET_ESP32S3)
-#define CAMERA_MODEL_FREENOVE_ESP32S3_CAM
-//#define CAMERA_MODEL_XIAO_ESP32S3 
+//#define CAMERA_MODEL_FREENOVE_ESP32S3_CAM
+#define CAMERA_MODEL_XIAO_ESP32S3 
 //#define CAMERA_MODEL_NEW_ESPS3_RE1_0
 //#define CAMERA_MODEL_M5STACK_CAMS3_UNIT
 //#define CAMERA_MODEL_ESP32S3_EYE 
@@ -47,9 +47,9 @@
   Optional features NOT included by default to reduce heap use 
   To include a particular feature, change false to true
 ***************************************************************/
-#define INCLUDE_FTP_HFS false // ftp.cpp (file upload)
+#define INCLUDE_FTP_HFS true // ftp.cpp (file upload)
 #define INCLUDE_TGRAM false   // telegram.cpp (Telegram app interface)
-#define INCLUDE_AUDIO false   // audio.cpp (microphones & speakers)
+#define INCLUDE_AUDIO true   // audio.cpp (microphones & speakers)
 #define INCLUDE_PERIPH false  // peripherals.cpp (servos, PIR, led etc)
 #define INCLUDE_SMTP false    // smtp.cpp (email)
 #define INCLUDE_MQTT false    // mqtt.cpp (MQTT)
@@ -119,7 +119,7 @@
 #define INDEX_PAGE_PATH DATA_DIR "/SideAl" HTML_EXT
 #define NO_SD
 #else
-#define APP_NAME "ESP-CAM_MJPEG" // max 15 chars
+#define APP_NAME "ESNES-3S23PSE" // max 15 chars
 #define INDEX_PAGE_PATH DATA_DIR "/MJPEG2SD" HTML_EXT
 #endif
 
@@ -145,7 +145,7 @@
 #else
 #define STORAGE SD_MMC
 #endif
-#define GITHUB_PATH "/s60sc/ESP32-CAM_MJPEG2SD/master"
+#define GITHUB_PATH "/adamkirkus/ESP32-CAM_MJPEG2SD/master"
 #define RAMSIZE (1024 * 8) // set this to multiple of SD card sector size (512 or 1024 bytes)
 #define CHUNKSIZE (1024 * 4)
 #define ISCAM // cam specific code in generics
